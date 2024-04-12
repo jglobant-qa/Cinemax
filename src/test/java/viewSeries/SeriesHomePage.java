@@ -3,6 +3,9 @@ package viewSeries;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.JavascriptExecutor;
+
+import java.util.Arrays;
 
 public class SeriesHomePage {
     private WebDriver driver;
@@ -19,14 +22,21 @@ public class SeriesHomePage {
         WebElement playWebVideo = driver.findElement(CSSplayVideo);
         playWebVideo.click();
         try {
-            Thread.sleep(10000);
+            Thread.sleep(5000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
     }
 
-    public boolean isVideoPLaying(){
-
+    public boolean isVideoPlaying(){
+        WebElement isPlaying = driver.findElement(progressBar);
+        String[] playerValue = isPlaying.getAttribute("style").split(":");
+        String[] progressValue = playerValue[2].split("%");
+        String[] progress = progressValue[0].split("\\.");
+        System.out.println(progress[0]);
+        Integer progressBarValue = Integer.parseInt(progress[0].replaceAll("\\s", ""));
+        System.out.println(progressBarValue);
+        return progressBarValue > 0;
     }
 
 }

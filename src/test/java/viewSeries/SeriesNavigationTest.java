@@ -30,6 +30,7 @@ public class SeriesNavigationTest {
         cinemaxHomePage.clickViewMore();
         cinemaxHomePage.isStreamOnPresent();
         seriesHomePage.playVideo();
+        seriesHomePage.isVideoPlaying();
     }
 
     @AfterMethod
