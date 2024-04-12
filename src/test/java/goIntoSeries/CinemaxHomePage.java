@@ -1,3 +1,5 @@
+package goIntoSeries;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -14,7 +16,7 @@ public class CinemaxHomePage {
     //private By viewMoreButton = By.id("viewMoreButton"); // Example locator, adjust based on actual application
 
     /**
-     * Constructor for the CinemaxHomePage class.
+     * Constructor for the goIntoSeries.CinemaxHomePage class.
      * @param driver WebDriver instance to interact with the page
      */
     public CinemaxHomePage(WebDriver driver) {
