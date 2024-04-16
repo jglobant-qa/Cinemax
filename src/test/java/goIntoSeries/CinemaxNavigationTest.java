@@ -19,6 +19,7 @@ public class CinemaxNavigationTest {
     @BeforeMethod
     public void setUp() {
         WebDriver driver = WebDriverManager.chromedriver().create();
+        driver.manage().window().maximize();
         driver.get("http://www.cinemax.com");
         cinemaxHomePage = new CinemaxHomePage(driver);
     }
