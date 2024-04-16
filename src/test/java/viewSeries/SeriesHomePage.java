@@ -33,9 +33,7 @@ public class SeriesHomePage {
         String[] playerValue = isPlaying.getAttribute("style").split(":");
         String[] progressValue = playerValue[2].split("%");
         String[] progress = progressValue[0].split("\\.");
-        System.out.println(progress[0]);
         Integer progressBarValue = Integer.parseInt(progress[0].replaceAll("\\s", ""));
-        System.out.println(progressBarValue);
         return progressBarValue > 0;
     }
 
