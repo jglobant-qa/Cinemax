@@ -1,11 +1,9 @@
 package viewSeries;
 
-//import goIntoSeries.CinemaxHomePage;
 import goIntoSeries.CinemaxHomePage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -19,6 +17,7 @@ public class SeriesNavigationTest {
     @BeforeMethod
     public void setUp() {
         WebDriver driver = WebDriverManager.chromedriver().create();
+        driver.manage().window().maximize();
         driver.get("http://www.cinemax.com");
         seriesHomePage = new SeriesHomePage(driver);
         cinemaxHomePage = new CinemaxHomePage(driver);
@@ -30,6 +29,7 @@ public class SeriesNavigationTest {
         cinemaxHomePage.clickViewMore();
         cinemaxHomePage.isStreamOnPresent();
         seriesHomePage.playVideo();
+        seriesHomePage.isVideoPlaying();
     }
 
     @AfterMethod
