@@ -25,9 +25,13 @@ public class SeriesNavigationTest {
 
     @Test
     public void playVideo() {
+        cinemaxHomePage.waitImplicit();
+        cinemaxHomePage.acceptOneTrust();
         cinemaxHomePage.isViewMorePresent();
         cinemaxHomePage.clickViewMore();
         cinemaxHomePage.isStreamOnPresent();
+        cinemaxHomePage.waitImplicit();
+        seriesHomePage.ByVisibleElement();
         seriesHomePage.playVideo();
         seriesHomePage.isVideoPlaying();
     }

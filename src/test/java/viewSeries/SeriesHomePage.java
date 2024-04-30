@@ -22,7 +22,7 @@ public class SeriesHomePage {
         WebElement playWebVideo = driver.findElement(CSSplayVideo);
         playWebVideo.click();
         try {
-            Thread.sleep(5000);
+            Thread.sleep(7000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
@@ -35,6 +35,16 @@ public class SeriesHomePage {
         String[] progress = progressValue[0].split("\\.");
         Integer progressBarValue = Integer.parseInt(progress[0].replaceAll("\\s", ""));
         return progressBarValue > 0;
+    }
+
+    public void ByVisibleElement() {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+
+        //Locating element by link text and store in variable "Element"
+        WebElement Element = driver.findElement(CSSplayVideo);
+
+        // Scrolling down the page till the element is found
+        js.executeScript("arguments[0].scrollIntoView();", Element);
     }
 
 }

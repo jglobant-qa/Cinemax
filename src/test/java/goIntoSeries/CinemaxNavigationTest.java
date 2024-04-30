@@ -26,8 +26,12 @@ public class CinemaxNavigationTest {
 
     @Test
     public void testUserCanNavigateAndViewMore() {
+        cinemaxHomePage.waitImplicit();
+        cinemaxHomePage.acceptOneTrust();
         Assert.assertTrue(cinemaxHomePage.isViewMorePresent(), "View More button should be present on the homepage.");
+        cinemaxHomePage.waitImplicit();
         cinemaxHomePage.clickViewMore();
+        cinemaxHomePage.waitImplicit();
         cinemaxHomePage.isStreamOnPresent();
         String text = cinemaxHomePage.streamOnHBO();
         Assert.assertEquals(text, "STREAM ON HBO MAX");
